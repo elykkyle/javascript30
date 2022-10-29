@@ -1,0 +1,12 @@
+.env
+.DS_Store
+node_modules
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# Local Netlify folder
+.netlify
