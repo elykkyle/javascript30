@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Key Detection</title>
-  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
-</head>
-<body>
-<script>
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"></script>
+  </head>
+  <body>
+    <script>
+      const pressed = [];
+      const secretCode = 'secret';
+      window.addEventListener('keyup', (e) => {
+        pressed.push(e.key);
+        //keep only the most recent key presses (enough for the secret code to be entered)
+        pressed.splice(
+          -secretCode.length - 1,
+          pressed.length - secretCode.length
+        );
+        if (pressed.join('') === secretCode) {
+          console.log(`SECRET UNLOCKED!`);
+          cornify_add();
+        }
+      });
+    </script>
+  </body>
 </html>
