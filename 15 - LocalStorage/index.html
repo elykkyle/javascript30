@@ -61,6 +61,7 @@
         };
         items.push(item);
         populateList(items, itemsList);
+        localStorage.setItem('items', JSON.stringify(items));
         this.reset();
       }
 
@@ -80,6 +81,8 @@
       }
 
       addItems.addEventListener('submit', addItem);
+
+      populateList(JSON.parse(localStorage.getItem('items')), itemsList);
     </script>
   </body>
 </html>
